@@ -5,15 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brian Tech | IT & Design Expert</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
     <style>
         :root { --navy: #1a2a6c; --red: #b21f1f; --gold: #fdbb2d; --bg: #f8f9fa; }
         body { font-family: 'Segoe UI', sans-serif; margin: 0; background: var(--bg); overflow-x: hidden; }
         
-        /* Premium Nav with Logo */
+        /* Premium Nav with business-1card.jpg Logo */
         nav { background: var(--navy); padding: 10px 30px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
         .nav-brand { display: flex; align-items: center; text-decoration: none; color: white; }
-        .nav-brand img { height: 45px; width: 45px; border-radius: 50%; border: 2px solid var(--gold); object-fit: cover; margin-right: 15px; }
+        .nav-brand img { height: 50px; width: 50px; border-radius: 50%; border: 2px solid var(--gold); object-fit: cover; margin-right: 15px; }
+        .nav-brand span { font-weight: bold; letter-spacing: 1px; font-size: 1.2rem; }
         .nav-links a { color: white; margin-left: 20px; text-decoration: none; font-weight: bold; transition: 0.3s; }
         .nav-links a:hover { color: var(--gold); }
 
@@ -31,11 +31,9 @@
         .card { 
             background: white; padding: 30px; border-radius: 15px; text-align: center;
             box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: 0.3s;
-            opacity: 0; transform: translateY(20px); animation: fadeInUp 0.6s forwards;
         }
         .card:hover { transform: translateY(-10px); box-shadow: 0 12px 30px rgba(0,0,0,0.1); }
-        @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
-
+        
         .portfolio-img { width: 100%; height: 220px; object-fit: cover; border-radius: 12px; margin-bottom: 15px; }
         .btn { background: var(--gold); color: #222; padding: 12px 35px; border-radius: 50px; text-decoration: none; font-weight: bold; display: inline-block; margin-top: 25px; }
         footer { background: #111; color: #777; padding: 40px; text-align: center; }
@@ -45,7 +43,7 @@
 
 <nav>
     <a href="index.html" class="nav-brand">
-        <img src="business-card.jpg" alt="BM Logo">
+        <img src="business-1card.jpg" alt="BM Logo">
         <span>BRIAN TECH</span>
     </a>
     <div class="nav-links">
@@ -56,8 +54,8 @@
 </nav>
 
 <header>
-    <h1>Expert Tech & Creative Solutions</h1>
-    <p>Professional IT Support & Graphic Design for Meru County</p>
+    <h1>Brian Muthomi Solutions</h1>
+    <p>Professional IT Support & Graphic Design in Mitunguu, Meru</p>
 </header>
 
 <div class="container">
@@ -65,32 +63,34 @@
         <div class="card">
             <i class="fas fa-laptop-medical" style="font-size: 3rem; color: var(--navy); margin-bottom: 15px;"></i>
             <h3>IT & Repair</h3>
-            <p>Hardware diagnostics, OS installation, and laptop maintenance.</p>
+            <p>Hardware diagnostics, OS installation, and fast laptop maintenance in Mitunguu.</p>
         </div>
         <div class="card">
             <i class="fas fa-network-wired" style="font-size: 3rem; color: var(--navy); margin-bottom: 15px;"></i>
             <h3>Networking</h3>
-            <p>Reliable WiFi setup and business network management.</p>
+            <p>Reliable WiFi setup and office network management for local businesses.</p>
         </div>
         <div class="card">
             <i class="fas fa-palette" style="font-size: 3rem; color: var(--navy); margin-bottom: 15px;"></i>
             <h3>Branding</h3>
-            <p>Professional logos and marketing materials for your business.</p>
+            <p>Professional logos, business cards, and marketing materials to grow your brand.</p>
         </div>
     </div>
 
     <h2 style="text-align: center; margin-top: 70px;">Featured Work</h2>
     <div class="grid">
         <div class="card"><img src="design1.jpg" class="portfolio-img"><h4>Corporate Logo</h4></div>
-        <div class="card"><img src="design2.jpg" class="portfolio-img"><h4>Social Media Ad</h4></div>
+        <div class="card"><img src="design2.jpg" class="portfolio-img"><h4>Marketing Flyer</h4></div>
         <div class="card">
-            <img src="business-card.jpg" class="portfolio-img">
+            <img src="business-1card.jpg" class="portfolio-img">
             <h4>Premium Business Cards</h4>
             <a href="services.html" class="btn" style="padding: 8px 15px; font-size: 0.8rem;">Get This Design</a>
         </div>
     </div>
 </div>
 
-<footer><p>&copy; 2026 Brian Muthomi Solutions</p></footer>
+<footer>
+    <p>&copy; 2026 Brian Muthomi | Contact: +254 706 006 446 | Mitunguu, Meru</p>
+</footer>
 </body>
 </html>
