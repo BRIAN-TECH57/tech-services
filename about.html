@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Brian | Brian Tech</title>
+    <title>About | Brian Tech</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root { --navy: #1a2a6c; --gold: #fdbb2d; }
         body { font-family: 'Segoe UI', sans-serif; margin: 0; background: #f8f9fa; }
-        nav { background: var(--navy); padding: 15px; text-align: center; }
-        nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
+        nav { background: var(--navy); padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; }
+        .nav-logo { display: flex; align-items: center; text-decoration: none; color: white; }
+        .nav-logo img { width: 45px; height: 45px; border-radius: 50%; border: 2px solid var(--gold); object-fit: cover; margin-right: 12px; }
+        .nav-links a { color: white; margin-left: 20px; text-decoration: none; font-weight: bold; }
         .profile-header { background: var(--navy); color: white; padding: 60px 20px; text-align: center; }
         .profile-img { width: 150px; height: 150px; border-radius: 50%; border: 5px solid var(--gold); margin-bottom: 20px; }
         .container { max-width: 800px; margin: auto; padding: 40px 20px; line-height: 1.8; }
@@ -18,31 +20,26 @@
 <body>
 
 <nav>
-    <a href="index.html">Home</a>
-    <a href="services.html">Services & Pricing</a>
-    <a href="about.html" style="color: var(--gold);">About Brian</a>
+    <a href="index.html" class="nav-logo">
+        <img src="business-card.jpg" alt="BM Logo">
+        <span>BRIAN TECH</span>
+    </a>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="about.html" style="color: var(--gold);">About</a>
+    </div>
 </nav>
 
 <div class="profile-header">
-    <img src="profile.jpg" alt="Brian Muthomi" class="profile-img">
+    <img src="profile.jpg" alt="Brian" class="profile-img">
     <h1>Brian Muthomi</h1>
-    <p>IT Specialist & Graphic Designer</p>
+    <p>IT Specialist | Graphic Designer | Mitunguu</p>
 </div>
 
 <div class="container">
-    <h2>My Story</h2>
-    <p>Based in Mitunguu, Meru, I provide high-quality technical solutions for businesses and individuals. My mission is to bridge the gap between complex technology and local business needs.</p>
-    
-    <h2>Why Work With Me?</h2>
-    <ul>
-        <li><strong>Local & Reliable:</strong> I understand the specific needs of clients in Meru County.</li>
-        <li><strong>Expertise:</strong> Certified skills in both hardware repair and modern brand design.</li>
-        <li><strong>Fast Turnaround:</strong> Most design projects are delivered within 48 hours.</li>
-    </ul>
-
-    <div style="margin-top: 40px; text-align: center;">
-        <a href="https://wa.me/254706006446" style="color: var(--navy); font-weight: bold;"><i class="fab fa-whatsapp"></i> Contact Me Directly</a>
-    </div>
+    <h2>Reliable Tech Solutions in Meru</h2>
+    <p>I combine technical hardware expertise with creative brand design to help local businesses succeed in a digital world.</p>
 </div>
 
 </body>
