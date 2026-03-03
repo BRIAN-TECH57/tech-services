@@ -3,24 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About | Brian Tech</title>
+    <title>About Brian | Brian Tech</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root { --navy: #1a2a6c; --gold: #fdbb2d; }
-        body { font-family: 'Segoe UI', sans-serif; margin: 0; background: #f8f9fa; }
-        nav { background: var(--navy); padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; }
-        .nav-logo { display: flex; align-items: center; text-decoration: none; color: white; }
-        .nav-logo img { width: 45px; height: 45px; border-radius: 50%; border: 2px solid var(--gold); object-fit: cover; margin-right: 12px; }
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; background: #f8f9fa; line-height: 1.8; }
+        nav { background: var(--navy); padding: 10px 30px; display: flex; justify-content: space-between; align-items: center; }
+        .nav-brand { display: flex; align-items: center; text-decoration: none; color: white; }
+        .nav-brand img { height: 45px; width: 45px; border-radius: 50%; border: 2px solid var(--gold); object-fit: cover; margin-right: 15px; }
         .nav-links a { color: white; margin-left: 20px; text-decoration: none; font-weight: bold; }
-        .profile-header { background: var(--navy); color: white; padding: 60px 20px; text-align: center; }
-        .profile-img { width: 150px; height: 150px; border-radius: 50%; border: 5px solid var(--gold); margin-bottom: 20px; }
-        .container { max-width: 800px; margin: auto; padding: 40px 20px; line-height: 1.8; }
+        .profile-hero { background: var(--navy); color: white; padding: 80px 20px; text-align: center; }
+        .profile-img { width: 160px; height: 160px; border-radius: 50%; border: 6px solid var(--gold); margin-bottom: 25px; object-fit: cover; box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
+        .content { max-width: 850px; margin: auto; padding: 50px 20px; }
     </style>
 </head>
 <body>
 
 <nav>
-    <a href="index.html" class="nav-logo">
+    <a href="index.html" class="nav-brand">
         <img src="business-card.jpg" alt="BM Logo">
         <span>BRIAN TECH</span>
     </a>
@@ -31,15 +31,24 @@
     </div>
 </nav>
 
-<div class="profile-header">
-    <img src="profile.jpg" alt="Brian" class="profile-img">
+<div class="profile-hero">
+    <img src="brian.jpg" alt="Brian Muthomi" class="profile-img">
     <h1>Brian Muthomi</h1>
-    <p>IT Specialist | Graphic Designer | Mitunguu</p>
+    <p>IT Specialist & Graphic Designer</p>
 </div>
 
-<div class="container">
-    <h2>Reliable Tech Solutions in Meru</h2>
-    <p>I combine technical hardware expertise with creative brand design to help local businesses succeed in a digital world.</p>
+<div class="content">
+    <h2>My Mission</h2>
+    <p>Based in Mitunguu, I am dedicated to providing high-quality tech support and creative branding to small businesses in Meru. I believe technology should be accessible and branding should be beautiful.</p>
+    
+    <div style="background: white; padding: 30px; border-radius: 15px; border-left: 5px solid var(--gold); margin-top: 30px;">
+        <h3>Why Work With Me?</h3>
+        <ul style="list-style: none; padding: 0;">
+            <li><i class="fas fa-check-circle" style="color: #28a745;"></i> 100% Reliable Hardware Support</li>
+            <li><i class="fas fa-check-circle" style="color: #28a745;"></i> Modern Design Standards</li>
+            <li><i class="fas fa-check-circle" style="color: #28a745;"></i> Fast 48-Hour Delivery on Logos</li>
+        </ul>
+    </div>
 </div>
 
 </body>
