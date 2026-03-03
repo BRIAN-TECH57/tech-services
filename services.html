@@ -3,52 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services & Pricing | Brian Tech</title>
+    <title>Services | Brian Tech</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root { --navy: #1a2a6c; --red: #b21f1f; --gold: #fdbb2d; --bg: #f8f9fa; }
-        body { font-family: 'Segoe UI', sans-serif; margin: 0; background: var(--bg); }
-        nav { background: var(--navy); padding: 15px; text-align: center; }
-        nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
+        :root { --navy: #1a2a6c; --gold: #fdbb2d; }
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; background: #f8f9fa; }
+        nav { background: var(--navy); padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; }
+        .nav-logo { display: flex; align-items: center; text-decoration: none; color: white; }
+        .nav-logo img { width: 45px; height: 45px; border-radius: 50%; border: 2px solid var(--gold); object-fit: cover; margin-right: 12px; }
+        .nav-links a { color: white; margin-left: 20px; text-decoration: none; font-weight: bold; }
         header { background: var(--navy); color: white; padding: 40px; text-align: center; }
         .container { max-width: 900px; margin: auto; padding: 40px 20px; }
-        
         .price-card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); margin-bottom: 30px; }
         table { width: 100%; border-collapse: collapse; }
         th { background: #f1f1f1; padding: 15px; text-align: left; }
         td { padding: 15px; border-bottom: 1px solid #eee; }
-        .price { font-weight: bold; color: var(--red); }
-        .order-btn { background: #25D366; color: white; padding: 5px 12px; border-radius: 4px; text-decoration: none; font-size: 0.8rem; }
+        .order-btn { background: #25D366; color: white; padding: 8px 15px; border-radius: 5px; text-decoration: none; }
     </style>
 </head>
 <body>
 
 <nav>
-    <a href="index.html">Home</a>
-    <a href="services.html" style="color: var(--gold);">Services & Pricing</a>
-    <a href="about.html">About Brian</a>
+    <a href="index.html" class="nav-logo">
+        <img src="business-card.jpg" alt="BM Logo">
+        <span>BRIAN TECH</span>
+    </a>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="services.html" style="color: var(--gold);">Services</a>
+        <a href="about.html">About</a>
+    </div>
 </nav>
 
-<header>
-    <h1>Our Services & Pricing</h1>
-</header>
+<header><h1>Transparent Pricing</h1></header>
 
 <div class="container">
-    <h2><i class="fas fa-microchip"></i> Technical Services</h2>
     <div class="price-card">
         <table>
             <tr><th>Service</th><th>Price</th><th>Action</th></tr>
-            <tr><td>OS Installation</td><td class="price">KSh 1,500</td><td><a href="https://wa.me/254706006446?text=Order:OS" class="order-btn">Book</a></td></tr>
-            <tr><td>Network Setup</td><td class="price">KSh 2,500+</td><td><a href="https://wa.me/254706006446?text=Order:Network" class="order-btn">Quote</a></td></tr>
-        </table>
-    </div>
-
-    <h2><i class="fas fa-pen-nib"></i> Creative Design</h2>
-    <div class="price-card">
-        <table>
-            <tr><th>Service</th><th>Price</th><th>Action</th></tr>
-            <tr><td>Logo Design</td><td class="price">KSh 1,500</td><td><a href="https://wa.me/254706006446?text=Order:Logo" class="order-btn">Order</a></td></tr>
-            <tr><td>Business Cards</td><td class="price">KSh 1,000</td><td><a href="https://wa.me/254706006446?text=Order:Cards" class="order-btn">Order</a></td></tr>
+            <tr><td>Logo Design</td><td>KSh 1,500</td><td><a href="https://wa.me/254706006446" class="order-btn">Order</a></td></tr>
+            <tr><td>PC Repair</td><td>KSh 1,000+</td><td><a href="https://wa.me/254706006446" class="order-btn">Book</a></td></tr>
         </table>
     </div>
 </div>
