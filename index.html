@@ -24,6 +24,30 @@
         .btn-call { background: var(--navy); color: white; }
         .btn-wa { background: #25D366; color: white; }
         footer { text-align: center; padding: 40px; background: #222; color: #888; }
+        /* This creates a subtle pulse animation for your header */
+header {
+    background: linear-gradient(-45deg, #1a2a6c, #b21f1f, #1a2a6c);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    position: relative;
+    overflow: hidden;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Add a floating tech-pattern overlay */
+header::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: radial-gradient(rgba(255,255,255,0.1) 1px, transparent 1px);
+    background-size: 30px 30px;
+    opacity: 0.5;
+}
     </style>
 </head>
 <body>
@@ -115,6 +139,7 @@
 
 </body>
 </html>
+
 
 
 
