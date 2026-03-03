@@ -3,28 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services | Brian Tech</title>
+    <title>Services & Pricing | Brian Tech</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root { --navy: #1a2a6c; --gold: #fdbb2d; }
-        body { font-family: 'Segoe UI', sans-serif; margin: 0; background: #f8f9fa; }
-        nav { background: var(--navy); padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; }
-        .nav-logo { display: flex; align-items: center; text-decoration: none; color: white; }
-        .nav-logo img { width: 45px; height: 45px; border-radius: 50%; border: 2px solid var(--gold); object-fit: cover; margin-right: 12px; }
+        :root { --navy: #1a2a6c; --gold: #fdbb2d; --bg: #f8f9fa; }
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; background: var(--bg); }
+        nav { background: var(--navy); padding: 10px 30px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; }
+        .nav-brand { display: flex; align-items: center; text-decoration: none; color: white; }
+        .nav-brand img { height: 45px; width: 45px; border-radius: 50%; border: 2px solid var(--gold); object-fit: cover; margin-right: 15px; }
         .nav-links a { color: white; margin-left: 20px; text-decoration: none; font-weight: bold; }
-        header { background: var(--navy); color: white; padding: 40px; text-align: center; }
+        header { background: var(--navy); color: white; padding: 50px 20px; text-align: center; }
         .container { max-width: 900px; margin: auto; padding: 40px 20px; }
-        .price-card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); margin-bottom: 30px; }
+        .price-card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); margin-bottom: 40px; }
         table { width: 100%; border-collapse: collapse; }
-        th { background: #f1f1f1; padding: 15px; text-align: left; }
-        td { padding: 15px; border-bottom: 1px solid #eee; }
-        .order-btn { background: #25D366; color: white; padding: 8px 15px; border-radius: 5px; text-decoration: none; }
+        th { background: #f4f4f4; padding: 18px; text-align: left; }
+        td { padding: 18px; border-bottom: 1px solid #eee; }
+        .order-link { background: #25D366; color: white; padding: 8px 18px; border-radius: 6px; text-decoration: none; font-weight: bold; }
     </style>
 </head>
 <body>
 
 <nav>
-    <a href="index.html" class="nav-logo">
+    <a href="index.html" class="nav-brand">
         <img src="business-card.jpg" alt="BM Logo">
         <span>BRIAN TECH</span>
     </a>
@@ -35,14 +35,24 @@
     </div>
 </nav>
 
-<header><h1>Transparent Pricing</h1></header>
+<header><h1>Services & Pricing</h1></header>
 
 <div class="container">
+    <h2><i class="fas fa-tools"></i> IT & Repairs</h2>
     <div class="price-card">
         <table>
-            <tr><th>Service</th><th>Price</th><th>Action</th></tr>
-            <tr><td>Logo Design</td><td>KSh 1,500</td><td><a href="https://wa.me/254706006446" class="order-btn">Order</a></td></tr>
-            <tr><td>PC Repair</td><td>KSh 1,000+</td><td><a href="https://wa.me/254706006446" class="order-btn">Book</a></td></tr>
+            <tr><th>Task</th><th>Starting Price</th><th>Action</th></tr>
+            <tr><td>System Maintenance</td><td>KSh 1,000</td><td><a href="https://wa.me/254706006446" class="order-link">Book Now</a></td></tr>
+            <tr><td>WiFi Installation</td><td>KSh 2,500</td><td><a href="https://wa.me/254706006446" class="order-link">Request</a></td></tr>
+        </table>
+    </div>
+
+    <h2><i class="fas fa-paint-brush"></i> Design Packages</h2>
+    <div class="price-card">
+        <table>
+            <tr><th>Package</th><th>Starting Price</th><th>Action</th></tr>
+            <tr><td>Business Logo</td><td>KSh 1,500</td><td><a href="https://wa.me/254706006446" class="order-link">Order</a></td></tr>
+            <tr><td>Business Cards</td><td>KSh 1,000</td><td><a href="https://wa.me/254706006446" class="order-link">Order</a></td></tr>
         </table>
     </div>
 </div>
