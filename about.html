@@ -14,19 +14,37 @@
         .nav-brand img { height: 45px; width: 45px; border-radius: 50%; border: 2px solid var(--gold); margin-right: 15px; }
         .nav-links a { color: white; margin-left: 20px; text-decoration: none; font-weight: bold; }
         #theme-toggle { background: none; border: none; color: white; cursor: pointer; font-size: 1.2rem; margin-left: 20px; }
+        
         .profile-hero { background: var(--navy); color: white; padding: 60px 20px; text-align: center; }
         .profile-img { width: 150px; height: 150px; border-radius: 50%; border: 5px solid var(--gold); margin-bottom: 20px; object-fit: cover; }
+        
         .container { max-width: 850px; margin: auto; padding: 40px 20px; }
+        
+        /* Contact Button Styles */
+        .vcard-btn { 
+            background: var(--gold); color: #222; padding: 15px 25px; 
+            border-radius: 50px; text-decoration: none; font-weight: bold; 
+            display: inline-flex; align-items: center; gap: 10px;
+            margin-bottom: 40px; transition: 0.3s; border: none; cursor: pointer;
+        }
+        .vcard-btn:hover { transform: scale(1.05); box-shadow: 0 5px 15px rgba(253, 187, 45, 0.4); }
+
         .tip-card { background: var(--card); padding: 25px; border-radius: 12px; margin-bottom: 20px; border-left: 5px solid var(--gold); box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
         .tip-card h3 { margin-top: 0; color: var(--gold); }
+        
         .whatsapp-bubble { position: fixed; bottom: 30px; right: 30px; background: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; box-shadow: 0 4px 15px rgba(0,0,0,0.3); text-decoration: none; z-index: 1000; }
     </style>
 </head>
 <body>
+
 <nav>
     <a href="index.html" class="nav-brand"><img src="business-1card.jpg"><span>BRIAN TECH</span></a>
     <div style="display:flex; align-items:center;">
-        <div class="nav-links"><a href="index.html">Home</a><a href="services.html">Services</a><a href="about.html" style="color:var(--gold);">About</a></div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="about.html" style="color:var(--gold);">About</a>
+        </div>
         <button id="theme-toggle"><i class="fas fa-moon"></i></button>
     </div>
 </nav>
@@ -35,38 +53,40 @@
     <img src="brian.jpg" alt="Brian" class="profile-img">
     <h1>Brian Muthomi</h1>
     <p>IT Specialist & Designer | Mitunguu, Meru</p>
+    
+    <button onclick="downloadVCard()" class="vcard-btn">
+        <i class="fas fa-address-card"></i> Save Contact to Phone
+    </button>
 </div>
 
 <div class="container">
     <h2><i class="fas fa-shield-alt"></i> Pro Tips: Protect Your Hardware</h2>
-    <p>Preventing damage is cheaper than a repair. Follow these expert tips to keep your PC running for years:</p>
+    <p>Follow these expert tips to keep your PC running at peak performance:</p>
 
     
 
     <div class="tip-card">
-        <h3>1. Keep it Cool & Dust-Free</h3>
-        <p>Dust is the #1 silent killer of laptops. Ensure your PC is on a flat, hard surface (not a bed or carpet) to allow fans to breathe. Blow out dust every 6 months.</p>
+        <h3>1. Keep it Cool</h3>
+        <p>Always use your laptop on a hard, flat surface. Using it on a bed or sofa blocks airflow, causing the processor to overheat and slow down.</p>
     </div>
 
     <div class="tip-card">
-        <h3>2. Use a Surge Protector</h3>
-        <p>Power fluctuations in Meru can fry your motherboard. Always use a high-quality surge protector or UPS to handle voltage spikes.</p>
+        <h3>2. Surge Protection</h3>
+        <p>Voltage spikes are common. Always plug your expensive electronics into a surge protector to prevent motherboard failure.</p>
     </div>
 
-    <div class="tip-card">
-        <h3>3. Shutdown Properly</h3>
-        <p>Avoid holding the power button to force a shutdown. This can corrupt your Windows OS or damage your Hard Drive (HDD) over time.</p>
-    </div>
+    
 
     <div class="tip-card">
-        <h3>4. Battery Health</h3>
-        <p>Don't leave your laptop plugged in 24/7. Let the battery drain to about 20% once a week to keep the cells active and healthy.</p>
+        <h3>3. Clean Your Files</h3>
+        <p>Run a "Disk Cleanup" once a month to remove temporary files that slow down your system boot time.</p>
     </div>
 </div>
 
 <a href="https://wa.me/254706006446" class="whatsapp-bubble" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
 <script>
+    // Theme Toggle
     const toggle = document.getElementById('theme-toggle');
     if (localStorage.getItem('theme') === 'dark') { document.documentElement.setAttribute('data-theme', 'dark'); toggle.innerHTML = '<i class="fas fa-sun"></i>'; }
     toggle.addEventListener('click', () => {
@@ -75,6 +95,28 @@
         localStorage.setItem('theme', isDark ? 'light' : 'dark');
         toggle.innerHTML = isDark ? '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
     });
+
+    // VCard Download Function
+    function downloadVCard() {
+        const vcardData = `BEGIN:VCARD
+VERSION:3.0
+FN:Brian Muthomi (Brian Tech)
+TEL;TYPE=CELL:+254706006446
+ORG:Brian Tech Solutions
+TITLE:IT Specialist & Graphic Designer
+ADR;TYPE=WORK:;;Mitunguu;Meru;;Kenya
+URL:https://brianmuthomi.github.io/
+END:VCARD`;
+
+        const blob = new Blob([vcardData], { type: 'text/vcard' });
+        const url = window.URL.createObjectURL(blob);
+        const newLink = document.createElement('a');
+        newLink.href = url;
+        newLink.setAttribute('download', 'Brian_Tech.vcf');
+        document.body.appendChild(newLink);
+        newLink.click();
+        document.body.removeChild(newLink);
+    }
 </script>
 </body>
 </html>
