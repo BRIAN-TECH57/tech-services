@@ -8,50 +8,87 @@
     <style>
         :root { --navy: #1a2a6c; --gold: #fdbb2d; --bg: #f8f9fa; --text: #333; --card: #fff; }
         [data-theme="dark"] { --bg: #0f0f13; --text: #eee; --card: #1e1e1e; }
-        body { font-family: 'Poppins', sans-serif; margin: 0; background: var(--bg); color: var(--text); line-height: 1.6; }
+        body { font-family: 'Poppins', sans-serif; margin: 0; background: var(--bg); color: var(--text); line-height: 1.6; transition: 0.4s; }
+        
         nav { background: var(--navy); padding: 12px 30px; display: flex; justify-content: space-between; align-items: center; position: sticky; top:0; z-index: 1000;}
         .nav-brand { display: flex; align-items: center; color: white; text-decoration: none; font-weight: bold; }
-        .nav-brand img { height: 40px; border-radius: 50%; border: 2px solid var(--gold); margin-right: 10px; }
+        .nav-brand img { height: 40px; border-radius: 50%; border: 2px solid var(--gold); margin-right: 10px; object-fit: cover; }
         .nav-links a { color: white; margin-left: 20px; text-decoration: none; font-size: 0.9rem; }
         
-        .hero { background: var(--navy); color: white; padding: 60px 20px; text-align: center; }
+        .hero { background: var(--navy); color: white; padding: 60px 20px; text-align: center; border-bottom: 5px solid var(--gold); }
         .profile-img { width: 140px; height: 140px; border-radius: 50%; border: 4px solid var(--gold); margin-bottom: 15px; object-fit: cover; }
+        
         .container { max-width: 800px; margin: auto; padding: 40px 20px; }
-        .vcard-btn { background: var(--gold); color: #222; padding: 12px 25px; border-radius: 50px; border: none; font-weight: bold; cursor: pointer; transition: 0.3s; }
+        
+        .contact-box { background: var(--card); padding: 20px; border-radius: 15px; margin-bottom: 30px; display: flex; flex-direction: column; gap: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .contact-item { display: flex; align-items: center; gap: 15px; text-decoration: none; color: var(--text); font-weight: 500; }
+        .contact-item i { color: var(--gold); font-size: 1.2rem; width: 25px; }
+
+        .vcard-btn { background: var(--gold); color: #222; padding: 15px 30px; border-radius: 50px; border: none; font-weight: bold; cursor: pointer; transition: 0.3s; margin-top: 15px; display: inline-flex; align-items: center; gap: 10px; }
+        .vcard-btn:hover { transform: scale(1.05); box-shadow: 0 5px 15px rgba(253, 187, 45, 0.4); }
+
         .tip-card { background: var(--card); padding: 20px; border-radius: 12px; margin-bottom: 15px; border-left: 5px solid var(--gold); box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .tip-card h3 { color: var(--gold); margin-top: 0; }
+        
         #theme-toggle { background: none; border: 1px solid rgba(255,255,255,0.3); color: white; padding: 5px 10px; border-radius: 5px; cursor: pointer; margin-left: 15px; }
+        .whatsapp-bubble { position: fixed; bottom: 30px; right: 30px; background: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; z-index: 1000; text-decoration: none; box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
     </style>
 </head>
 <body>
+
 <nav>
     <a href="index.html" class="nav-brand"><img src="business-1card.jpg"> BRIAN TECH</a>
     <div style="display:flex; align-items:center;">
-        <div class="nav-links"><a href="index.html">Home</a><a href="services.html">Services</a><a href="about.html" style="color:var(--gold)">About</a><a href="contact.html">Contact</a></div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="about.html" style="color:var(--gold)">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
         <button id="theme-toggle"><i class="fas fa-moon"></i></button>
     </div>
 </nav>
 
 <div class="hero">
-    <img src="brian.jpg" class="profile-img">
+    <img src="brian.jpg" alt="Brian Muthomi" class="profile-img">
     <h1>Brian Muthomi</h1>
-    <p>IT Specialist | Designer | Developer</p>
-    <button onclick="downloadVCard()" class="vcard-btn"><i class="fas fa-save"></i> Save My Contact</button>
+    <p>IT Specialist | Graphics Designer | Developer</p>
+    <button onclick="downloadVCard()" class="vcard-btn"><i class="fas fa-address-card"></i> Save My Contact</button>
 </div>
 
 <div class="container">
+    <h2>Direct Contacts</h2>
+    <div class="contact-box">
+        <a href="https://wa.me/254706006446" class="contact-item">
+            <i class="fab fa-whatsapp"></i> +254 706 006 446
+        </a>
+        <a href="mailto:bmuthomi57@gmail.com" class="contact-item">
+            <i class="fas fa-envelope"></i> bmuthomi57@gmail.com
+        </a>
+        <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i> Mitunguu, Meru County
+        </div>
+    </div>
+
     <h2>💻 PC Maintenance Tips</h2>
-    <div class="tip-card"><h3>1. Surge Protection</h3><p>Always use a surge protector in Mitunguu to avoid power spike damage.</p></div>
-    <div class="tip-card"><h3>2. Dust Removal</h3><p>Clean your laptop fans every 6 months to prevent overheating.</p></div>
-    <div class="tip-card"><h3>3. Clean Shutdowns</h3><p>Avoid forcing off your PC with the power button; it damages the HDD.</p></div>
+    <div class="tip-card">
+        <h3>1. Surge Protection</h3>
+        <p>Voltage spikes are common in Meru. Protect your motherboard by using a surge protector or UPS.</p>
+    </div>
+    <div class="tip-card">
+        <h3>2. Airflow Matters</h3>
+        <p>Keep your PC on a hard surface. Beddings block fans, leading to overheating and slow performance.</p>
+    </div>
+    <div class="tip-card">
+        <h3>3. Professional Servicing</h3>
+        <p>Have your laptop opened and cleaned once a year to remove dust and replace thermal paste.</p>
+    </div>
 </div>
 
+<a href="https://wa.me/254706006446" class="whatsapp-bubble" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
 <script>
-    function downloadVCard() {
-        const vcardData = `BEGIN:VCARD\nVERSION:3.0\nFN:Brian Muthomi (Brian Tech)\nTEL;TYPE=CELL:+254706006446\nORG:Brian Tech Solutions\nEND:VCARD`;
-        const blob = new Blob([vcardData], { type: 'text/vcard' });
-        const url = window.URL.createObjectURL(blob);
-        const a = document.createElement('a'); a.href = url; a.download = 'Brian_Tech.vcf'; a.click();
-    }
+    // Theme Toggle
     const toggle = document.getElementById('theme-toggle');
     if (localStorage.getItem('theme') === 'dark') { document.documentElement.setAttribute('data-theme', 'dark'); toggle.innerHTML = '<i class="fas fa-sun"></i>'; }
     toggle.addEventListener('click', () => {
@@ -60,6 +97,25 @@
         localStorage.setItem('theme', isDark ? 'light' : 'dark');
         toggle.innerHTML = isDark ? '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
     });
+
+    // Integrated VCard with your new details
+    function downloadVCard() {
+        const vcardData = `BEGIN:VCARD
+VERSION:3.0
+FN:Brian Muthomi (Brian Tech)
+TEL;TYPE=CELL:+254706006446
+EMAIL:bmuthomi57@gmail.com
+ORG:Brian Tech Solutions
+ADR;TYPE=WORK:;;Mitunguu;Meru;;Kenya
+END:VCARD`;
+
+        const blob = new Blob([vcardData], { type: 'text/vcard' });
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'Brian_Muthomi_Tech.vcf';
+        a.click();
+    }
 </script>
 </body>
 </html>
