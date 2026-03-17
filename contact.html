@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Brian Tech</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root { --navy: #1a2a6c; --gold: #fdbb2d; --bg: #f0f2f5; --text: #333; --card: rgba(255,255,255,0.9); }
+        [data-theme="dark"] { --bg: #0f0f13; --text: #eee; --card: rgba(30,30,37,0.9); }
+        body { font-family: 'Poppins', sans-serif; margin: 0; background: var(--bg); color: var(--text); }
+        nav { background: var(--navy); padding: 12px 30px; display: flex; justify-content: space-between; align-items: center; position: sticky; top:0; z-index: 1000;}
+        .nav-brand { display: flex; align-items: center; color: white; text-decoration: none; font-weight: bold; }
+        .nav-brand img { height: 40px; border-radius: 50%; border: 2px solid var(--gold); margin-right: 10px; }
+        .nav-links a { color: white; margin-left: 20px; text-decoration: none; font-size: 0.9rem; }
+        
+        .hero { background: linear-gradient(135deg, var(--navy), #b21f1f); color: white; padding: 80px 20px; text-align: center; }
+        .container { max-width: 900px; margin: -40px auto 40px; padding: 0 20px; }
+        .form-section { background: var(--card); padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); backdrop-filter: blur(10px); }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 5px; font-weight: bold; color: var(--gold); }
+        .form-group input, .form-group textarea { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; background: var(--bg); color: var(--text); box-sizing: border-box; }
+        .submit-btn { background: var(--navy); color: white; padding: 15px; border: none; border-radius: 8px; width: 100%; font-weight: bold; cursor: pointer; transition: 0.3s; }
+        .submit-btn:hover { background: var(--gold); color: #222; transform: translateY(-3px); }
+        #theme-toggle { background: none; border: 1px solid rgba(255,255,255,0.3); color: white; padding: 5px 10px; border-radius: 5px; cursor: pointer; margin-left: 15px; }
+    </style>
+</head>
+<body>
+<nav>
+    <a href="index.html" class="nav-brand"><img src="business-1card.jpg"> BRIAN TECH</a>
+    <div style="display:flex; align-items:center;">
+        <div class="nav-links"><a href="index.html">Home</a><a href="services.html">Services</a><a href="about.html">About</a><a href="contact.html" style="color:var(--gold)">Contact</a></div>
+        <button id="theme-toggle"><i class="fas fa-moon"></i></button>
+    </div>
+</nav>
+
+<div class="hero"><h1>Get In Touch</h1><p>Let's talk about your next project.</p></div>
+
+<div class="container">
+    <div class="form-section">
+        <form action="https://formspree.io/f/YOUR_ID_HERE" method="POST">
+            <div class="form-group"><label>Name</label><input type="text" name="name" required></div>
+            <div class="form-group"><label>Email</label><input type="email" name="email" required></div>
+            <div class="form-group"><label>Message</label><textarea name="message" rows="5" required></textarea></div>
+            <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    const toggle = document.getElementById('theme-toggle');
+    if (localStorage.getItem('theme') === 'dark') { document.documentElement.setAttribute('data-theme', 'dark'); toggle.innerHTML = '<i class="fas fa-sun"></i>'; }
+    toggle.addEventListener('click', () => {
+        let isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+        document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
+        localStorage.setItem('theme', isDark ? 'light' : 'dark');
+        toggle.innerHTML = isDark ? '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
+    });
+</script>
+</body>
+</html>
