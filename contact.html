@@ -6,50 +6,138 @@
     <title>Contact | Brian Tech</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root { --navy: #1a2a6c; --gold: #fdbb2d; --bg: #f0f2f5; --text: #333; --card: rgba(255,255,255,0.9); }
-        [data-theme="dark"] { --bg: #0f0f13; --text: #eee; --card: rgba(30,30,37,0.9); }
-        body { font-family: 'Poppins', sans-serif; margin: 0; background: var(--bg); color: var(--text); }
-        nav { background: var(--navy); padding: 12px 30px; display: flex; justify-content: space-between; align-items: center; position: sticky; top:0; z-index: 1000;}
-        .nav-brand { display: flex; align-items: center; color: white; text-decoration: none; font-weight: bold; }
-        .nav-brand img { height: 40px; border-radius: 50%; border: 2px solid var(--gold); margin-right: 10px; }
-        .nav-links a { color: white; margin-left: 20px; text-decoration: none; font-size: 0.9rem; }
+        :root { 
+            --navy: #1a2a6c; --gold: #fdbb2d; --red: #b21f1f;
+            --bg: #f0f2f5; --text: #2d3436; --card: #ffffff;
+        }
+        [data-theme="dark"] { 
+            --bg: #0f0f13; --text: #f5f6fa; --card: #1e1e1e;
+        }
+
+        body { font-family: 'Poppins', sans-serif; margin: 0; background: var(--bg); color: var(--text); transition: 0.4s; }
+
+        /* Navigation */
+        nav { 
+            background: rgba(26, 42, 108, 0.95); backdrop-filter: blur(10px);
+            padding: 12px 30px; display: flex; justify-content: space-between; 
+            align-items: center; position: sticky; top: 0; z-index: 1000;
+        }
+        .nav-brand { display: flex; align-items: center; text-decoration: none; color: white; font-weight: 800; }
+        .nav-brand img { height: 40px; border-radius: 50%; border: 2px solid var(--gold); margin-right: 12px; }
+        .nav-links a { color: white; margin-left: 20px; text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
+        .nav-links a:hover { color: var(--gold); }
+
+        /* Hero Section */
+        .contact-hero { 
+            background: linear-gradient(135deg, var(--navy), var(--red)); 
+            color: white; padding: 100px 20px; text-align: center;
+        }
+        .contact-hero h1 { font-size: 2.8rem; margin: 0; }
+        .contact-hero p { font-size: 1.1rem; opacity: 0.9; margin-top: 10px; }
+
+        .container { max-width: 1000px; margin: -50px auto 50px; padding: 0 20px; }
+
+        /* Contact Grid */
+        .contact-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            gap: 25px; 
+        }
+
+        .contact-card { 
+            background: var(--card); padding: 40px 20px; border-radius: 20px; 
+            text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
+            transition: 0.4s; border-bottom: 4px solid var(--gold);
+        }
+        .contact-card:hover { transform: translateY(-10px); box-shadow: 0 15px 35px rgba(0,0,0,0.15); }
+        .contact-card i { font-size: 3rem; color: var(--gold); margin-bottom: 20px; }
+        .contact-card h3 { margin: 10px 0; font-size: 1.4rem; color: var(--navy); }
+        [data-theme="dark"] .contact-card h3 { color: var(--gold); }
         
-        .hero { background: linear-gradient(135deg, var(--navy), #b21f1f); color: white; padding: 80px 20px; text-align: center; }
-        .container { max-width: 900px; margin: -40px auto 40px; padding: 0 20px; }
-        .form-section { background: var(--card); padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); backdrop-filter: blur(10px); }
-        .form-group { margin-bottom: 20px; }
-        .form-group label { display: block; margin-bottom: 5px; font-weight: bold; color: var(--gold); }
-        .form-group input, .form-group textarea { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; background: var(--bg); color: var(--text); box-sizing: border-box; }
-        .submit-btn { background: var(--navy); color: white; padding: 15px; border: none; border-radius: 8px; width: 100%; font-weight: bold; cursor: pointer; transition: 0.3s; }
-        .submit-btn:hover { background: var(--gold); color: #222; transform: translateY(-3px); }
-        #theme-toggle { background: none; border: 1px solid rgba(255,255,255,0.3); color: white; padding: 5px 10px; border-radius: 5px; cursor: pointer; margin-left: 15px; }
+        .contact-link { 
+            display: block; margin-top: 15px; color: var(--text); 
+            text-decoration: none; font-weight: 600; font-size: 1.05rem;
+            transition: 0.3s; word-break: break-all;
+        }
+        .contact-link:hover { color: var(--gold); }
+
+        /* WhatsApp Bubble */
+        .whatsapp-bubble { 
+            position: fixed; bottom: 30px; right: 30px; background: #25D366; 
+            color: white; width: 65px; height: 65px; border-radius: 50%; 
+            display: flex; align-items: center; justify-content: center; 
+            font-size: 2.2rem; z-index: 1000; box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+            text-decoration: none;
+        }
+
+        #theme-toggle { background: none; border: 1px solid rgba(255,255,255,0.3); color: white; padding: 6px 12px; border-radius: 8px; cursor: pointer; margin-left: 15px; }
+
+        footer { text-align: center; padding: 40px; color: #888; font-size: 0.9rem; }
     </style>
 </head>
 <body>
+
 <nav>
-    <a href="index.html" class="nav-brand"><img src="business-1card.jpg"> BRIAN TECH</a>
+    <a href="index.html" class="nav-brand">
+        <img src="business-1card.jpg" alt="Logo">
+        <span>BRIAN TECH</span>
+    </a>
     <div style="display:flex; align-items:center;">
-        <div class="nav-links"><a href="index.html">Home</a><a href="services.html">Services</a><a href="about.html">About</a><a href="contact.html" style="color:var(--gold)">Contact</a></div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="about.html">About</a>
+            <a href="contact.html" style="color:var(--gold);">Contact</a>
+        </div>
         <button id="theme-toggle"><i class="fas fa-moon"></i></button>
     </div>
 </nav>
 
-<div class="hero"><h1>Get In Touch</h1><p>Let's talk about your next project.</p></div>
+<div class="contact-hero">
+    <h1>Get In Touch</h1>
+    <p>Professional IT and Design solutions are just a click away.</p>
+</div>
 
 <div class="container">
-    <div class="form-section">
-        <form action="https://formspree.io/f/YOUR_ID_HERE" method="POST">
-            <div class="form-group"><label>Name</label><input type="text" name="name" required></div>
-            <div class="form-group"><label>Email</label><input type="email" name="email" required></div>
-            <div class="form-group"><label>Message</label><textarea name="message" rows="5" required></textarea></div>
-            <button type="submit" class="submit-btn">Send Message</button>
-        </form>
+    <div class="contact-grid">
+        <div class="contact-card">
+            <i class="fas fa-phone-alt"></i>
+            <h3>Call / WhatsApp</h3>
+            <p>Direct line for urgent enquiries</p>
+            <a href="tel:+254706006446" class="contact-link">0706 006 446</a>
+        </div>
+
+        <div class="contact-card">
+            <i class="fas fa-envelope-open-text"></i>
+            <h3>Official Emails</h3>
+            <p>For project details & documents</p>
+            <a href="mailto:bmuthomi57@gmail.com" class="contact-link">bmuthomi57@gmail.com</a>
+            <a href="mailto:muthomibrian329@gmail.com" class="contact-link">muthomibrian329@gmail.com</a>
+        </div>
+
+        <div class="contact-card">
+            <i class="fas fa-map-marker-alt"></i>
+            <h3>Visit Us</h3>
+            <p>Our physical hub in Meru</p>
+            <span class="contact-link">Mitunguu, Meru County</span>
+        </div>
     </div>
 </div>
 
+<a href="https://wa.me/254706006446" class="whatsapp-bubble" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+<footer>
+    <p>&copy; 2026 Brian Tech Solutions | All Rights Reserved</p>
+</footer>
+
 <script>
     const toggle = document.getElementById('theme-toggle');
-    if (localStorage.getItem('theme') === 'dark') { document.documentElement.setAttribute('data-theme', 'dark'); toggle.innerHTML = '<i class="fas fa-sun"></i>'; }
+    if (localStorage.getItem('theme') === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        toggle.innerHTML = '<i class="fas fa-sun"></i>';
+    }
     toggle.addEventListener('click', () => {
         let isDark = document.documentElement.getAttribute('data-theme') === 'dark';
         document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
