@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brian Tech | Home</title>
+    <title>Brian Tech | Innovation & Solutions</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root { --navy: #1a2a6c; --red: #b21f1f; --gold: #fdbb2d; --bg: #f8f9fa; --text: #333; --card: #fff; }
         [data-theme="dark"] { --bg: #0f0f13; --text: #eee; --card: #1e1e1e; }
-        
         body { font-family: 'Poppins', sans-serif; margin: 0; background: var(--bg); color: var(--text); transition: 0.4s; overflow-x: hidden; }
 
         /* Preloader */
@@ -17,32 +16,45 @@
         @keyframes spin { 100% { transform: rotate(360deg); } }
         .loader-hide { opacity: 0; pointer-events: none; }
 
+        /* Alert Banner */
+        .alert-container { background: linear-gradient(90deg, #fdbb2d, #f39c12); color: #1a2a6c; padding: 10px 20px; display: flex; justify-content: center; align-items: center; position: relative; z-index: 1001; font-weight: bold; font-size: 0.9rem; }
+        .alert-content { display: flex; align-items: center; gap: 15px; flex-wrap: wrap; }
+        .badge { background: #b21f1f; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.7rem; animation: flash 1.5s infinite; }
+        .alert-btn { background: #1a2a6c; color: white; text-decoration: none; padding: 4px 10px; border-radius: 4px; font-size: 0.8rem; }
+        .close-alert { background: none; border: none; font-size: 1.2rem; cursor: pointer; margin-left: 20px; }
+        @keyframes flash { 50% { opacity: 0.5; } }
+
         /* Nav */
         nav { background: rgba(26, 42, 108, 0.95); backdrop-filter: blur(10px); padding: 12px 30px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
         .nav-brand { display: flex; align-items: center; text-decoration: none; color: white; font-weight: bold; }
         .nav-brand img { height: 40px; border-radius: 50%; border: 2px solid var(--gold); margin-right: 10px; }
-        .nav-links a { color: white; margin-left: 20px; text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
-        .nav-links a:hover { color: var(--gold); }
-
-        /* Hero */
-        header { background: linear-gradient(-45deg, var(--navy), var(--red), var(--navy)); background-size: 400% 400%; animation: grad 15s infinite; color: white; padding: 120px 20px; text-align: center; }
+        .nav-links a { color: white; margin-left: 20px; text-decoration: none; font-size: 0.9rem; }
+        
+        header { background: linear-gradient(-45deg, var(--navy), var(--red), var(--navy)); background-size: 400% 400%; animation: grad 15s infinite; color: white; padding: 100px 20px; text-align: center; }
         @keyframes grad { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
         
         .container { max-width: 1100px; margin: auto; padding: 50px 20px; }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
         .card { background: var(--card); padding: 30px; border-radius: 20px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.4s; }
-        .card:hover { transform: translateY(-10px); }
         .card i { font-size: 3rem; color: var(--gold); margin-bottom: 15px; }
-
-        .whatsapp-bubble { position: fixed; bottom: 30px; right: 30px; background: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; box-shadow: 0 10px 20px rgba(0,0,0,0.2); z-index: 1000; text-decoration: none; animation: pulse 2s infinite; }
-        @keyframes pulse { 0% {transform: scale(1);} 50% {transform: scale(1.1);} 100% {transform: scale(1);} }
         
+        .whatsapp-bubble { position: fixed; bottom: 30px; right: 30px; background: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; z-index: 1000; text-decoration: none; }
         #theme-toggle { background: none; border: 1px solid rgba(255,255,255,0.3); color: white; padding: 5px 10px; border-radius: 5px; cursor: pointer; margin-left: 15px; }
+        .hide-banner { display: none !important; }
     </style>
 </head>
 <body>
 
-<div id="preloader"><div style="text-align:center"><div class="spinner"></div><p style="color:white; margin-top:10px">Brian Tech Hub...</p></div></div>
+<div id="preloader"><div class="spinner"></div></div>
+
+<div id="alert-banner" class="alert-container">
+    <div class="alert-content">
+        <span class="badge">LIVE</span>
+        <p>KUCCPS 2026 Portal is OPEN! Visit Brian Tech for Placement Assistance. 🎓</p>
+        <a href="services.html" class="alert-btn">View Services</a>
+    </div>
+    <button onclick="closeAlert()" class="close-alert">&times;</button>
+</div>
 
 <nav>
     <a href="index.html" class="nav-brand"><img src="business-1card.jpg"> BRIAN TECH</a>
@@ -59,21 +71,24 @@
 
 <header>
     <h1>Innovation. Design. Solutions.</h1>
-    <p>Professional IT Services & Graphic Design in Mitunguu, Meru</p>
+    <p>Your Professional Partner for IT and Creative Branding in Mitunguu</p>
 </header>
 
 <div class="container">
     <div class="grid">
-        <div class="card"><i class="fas fa-code"></i><h3>Development</h3><p>Web & App design using modern tech stacks.</p></div>
-        <div class="card"><i class="fas fa-fingerprint"></i><h3>Cyber Services</h3><p>Fast KRA, HELB, and E-Citizen applications.</p></div>
-        <div class="card"><i class="fas fa-paint-brush"></i><h3>Branding</h3><p>Premium Posters, Logos, and Hotel Menus.</p></div>
+        <div class="card"><i class="fas fa-graduation-cap"></i><h3>Student Support</h3><p>Fast KUCCPS and HELB applications with expert guidance.</p></div>
+        <div class="card"><i class="fas fa-laptop-code"></i><h3>Tech Services</h3><p>Software installation, KRA returns, and PC maintenance.</p></div>
+        <div class="card"><i class="fas fa-pen-nib"></i><h3>Graphics Design</h3><p>High-quality posters, menus, and logo branding.</p></div>
     </div>
 </div>
 
 <a href="https://wa.me/254706006446" class="whatsapp-bubble" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
 <script>
-    window.addEventListener('load', () => { setTimeout(() => { document.getElementById('preloader').classList.add('loader-hide'); }, 1000); });
+    window.addEventListener('load', () => { setTimeout(() => { document.getElementById('preloader').classList.add('loader-hide'); }, 800); });
+    function closeAlert() { document.getElementById('alert-banner').classList.add('hide-banner'); sessionStorage.setItem('alertClosed', 'true'); }
+    if (sessionStorage.getItem('alertClosed') === 'true') { document.getElementById('alert-banner').classList.add('hide-banner'); }
+    
     const toggle = document.getElementById('theme-toggle');
     if (localStorage.getItem('theme') === 'dark') { document.documentElement.setAttribute('data-theme', 'dark'); toggle.innerHTML = '<i class="fas fa-sun"></i>'; }
     toggle.addEventListener('click', () => {
